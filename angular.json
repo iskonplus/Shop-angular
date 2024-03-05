@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shop-angular": {
+    "Shop-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shop-angular:build:production"
+              "buildTarget": "Shop-angular:build:production"
             },
             "development": {
-              "buildTarget": "shop-angular:build:development"
+              "buildTarget": "Shop-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "shop-angular:build"
+            "buildTarget": "Shop-angular:build"
           }
         },
         "test": {
