@@ -1,0 +1,49 @@
+.wraper_cards{
+  display: flex;
+
+  .block_kards{
+    width: 100%;
+    display: flex;
+  }
+
+  .wrapper_card{
+    width: 25%;
+    padding: 0px 15px;
+  }
+
+  .wrapper_card:first-child{
+    padding-left: 0px;
+  }
+
+  .wrapper_card:last-child{
+    padding-right: 0px;
+  }
+
+  mat-card-content{
+    img{
+      width: 100px;
+      border: 1px solid black;
+    }
+
+    h4{
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    p{
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    .prise_card{
+      font-size: 18px;
+      font-weight: 600;
+
+    }
+
+  }
+
+
+}
+

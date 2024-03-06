@@ -1,0 +1,51 @@
+.wrapper_nav{
+  border-bottom: 1px solid #F3F3F3;
+}
+
+.nav{
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+
+  .block_nav{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.main_nav{
+  display: flex;
+  li{
+    margin-right: 25px;
+    list-style: none;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 400;
+  }
+
+  li:hover{
+    color: #673ab7;;
+  }
+}
+
+.icon_nav{
+  div{
+  width: 23px;
+  height: 23px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./img/iconsearch.png);
+  margin-right: 20px;
+  }
+  .icart{
+  background-image: url(./img/iconcart.png);
+  }
+  .iuser{
+  background-image: url(./img/iconuser.png);
+  margin-right: 0;
+  }
+}
