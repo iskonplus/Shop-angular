@@ -32,6 +32,8 @@
 }
 
 .icon_nav{
+  scale: 1;
+  transition: .3s;
   div{
   width: 23px;
   height: 23px;
@@ -48,4 +50,9 @@
   background-image: url(./img/iconuser.png);
   margin-right: 0;
   }
+}
+
+
+.icon_nav:hover{
+  scale: 1.1;
 }

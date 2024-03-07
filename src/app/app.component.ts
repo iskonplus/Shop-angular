@@ -4,6 +4,9 @@ import { HeaderComponent } from "./components/header/header.component";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NavComponent } from "./components/nav/nav.component";
 import { NewProductComponent } from "./components/new-product/new-product.component";
+import { BestsellerComponent } from "./components/bestseller/bestseller.component";
+import { ProductSaleComponent } from "./components/product-sale/product-sale.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 
 @Component({
@@ -11,7 +14,7 @@ import { NewProductComponent } from "./components/new-product/new-product.compon
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     standalone: true,
-    imports: [HeaderComponent, MatSlideToggleModule, NavComponent, NewProductComponent]
+    imports: [HeaderComponent, MatSlideToggleModule, NavComponent, NewProductComponent, BestsellerComponent, ProductSaleComponent, FooterComponent]
 })
 
 export class AppComponent {

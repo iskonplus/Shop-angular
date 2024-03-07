@@ -1,0 +1,47 @@
+.container{
+  width: 1200px;
+  margin: auto;
+  padding: 60px 0px;
+}
+
+.wrapper_footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .block_footer{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  h4{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  a{
+    text-decoration: none;
+    color: #000000;
+    transition: .3s;
+  }
+
+  a:hover{
+    color:#673AB7;
+  }
+
+  button{
+    margin-bottom: 20px;
+  }
+
+}
+
+.wrapper_soc{
+  display: flex;
+  margin-top: 10px;
+
+  a{
+    margin-right: 8px;
+  }
+}

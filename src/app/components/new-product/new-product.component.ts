@@ -12,5 +12,6 @@ import { ProductHeaderComponent } from "../product-header/product-header.compone
     imports: [MatCardModule, ProductCardsComponent, ProductHeaderComponent]
 })
 export class NewProductComponent {
+  title : string = 'New products';
 
 }

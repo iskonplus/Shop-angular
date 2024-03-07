@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -10,5 +10,5 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './product-header.component.scss'
 })
 export class ProductHeaderComponent {
-
+  @Input() title?: string;
 }
