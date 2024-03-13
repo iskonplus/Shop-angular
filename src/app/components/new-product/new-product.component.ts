@@ -1,27 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { ProductCardsComponent } from "../product-cards/product-cards.component";
 import { ProductHeaderComponent } from "../product-header/product-header.component";
-import { NewProductService } from '../../services/new-product.service'
+import { NgFor, SlicePipe } from '@angular/common';
+import { Card } from '../../types/card';
+
+
 
 @Component({
   selector: 'app-new-product',
   standalone: true,
   templateUrl: './new-product.component.html',
   styleUrl: './new-product.component.scss',
-  imports: [MatCardModule, ProductCardsComponent, ProductHeaderComponent, HttpClientModule],
-  // providers: [NewProductService]
+  imports: [MatCardModule, ProductCardsComponent,
+    ProductHeaderComponent, NgFor, SlicePipe,
+  ],
 })
-export class NewProductComponent implements OnInit {
+export class NewProductComponent {
   title: string = 'New products';
+  quantity = 4
 
-  constructor(private newProductService: NewProductService) { }
-
-  ngOnInit(): void {
-    this.newProductService.zzz();
+  @Input() cards?: Card[]
+  constructor() {
   }
 
+  resiveClick($event: number) {
+    this.quantity += $event;
+  }
+
+  ngOnInit(): void {
+
+  }
 }
 
 

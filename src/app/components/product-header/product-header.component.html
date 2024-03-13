@@ -1,5 +1,9 @@
 <div class="wrapper_product_header">
 <h2>{{title}}</h2>
 <h3>Dear to Leap</h3>
-<button mat-raised-button color="primary">Lihat semua tipe</button>
+<button  *ngIf="!isTitleSale"
+mat-raised-button
+color="primary"
+(click)="clickMore()"
+>{{!isShowMore? 'Show more':'Return'}}</button>
 </div>

@@ -1,6 +1,11 @@
 <div class="container">
 
-  <app-product-header [title]='title'></app-product-header>
-  <app-product-cards></app-product-cards>
+  <app-product-header [title]='title' (addEvent)="resiveClick($event)"></app-product-header>
+  <div class="wrapper_all_cards">
+    <app-product-cards
+    *ngFor="let card of cards | slice:0:quantity;"
+  [card]="card"
+  ></app-product-cards>
+</div>
 
 </div>

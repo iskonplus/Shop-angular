@@ -1,53 +1,23 @@
-<div class="wraper_cards">
-  <div class="block_kards">
 
-    <div class="wrapper_card">
+  <div class="background_card" [ngClass]="{active: isDitails}"></div>
+  <div class="block_kards" [ngClass]="{active: isDitails}">
+
+
       <mat-card>
         <mat-card-content>
-          <img src="../../../assets/productimages.jpg" alt="products" width="100%">
-          <h4>Realme Pad Mini</h4>
-          <p>Peningkat Kinerja Kuat</p>
-          <p class="prise_card">$ 2.399</p>
-          <button mat-raised-button color="accent">Beli Sekarang</button>
+          <img [src]="card.image" alt="products" width="100%" class="img"  [ngClass]="{active: isDitails}">
+          <h4>{{card.title}}</h4>
+          <p class="description" *ngIf=isDitails>{{card.description}}</p>
+          <div class="wrapper_price">
+          <p class="prise_card">Price: {{card.price | currency:'EUR'}}</p>
+          <p >{{card.rating.rate}}</p>
+        </div>
+          <button class="button_card" mat-raised-button color={{color}}
+          (click)="showDitails()"
+          >{{isDitails ? "Hide": "Show"}} Details</button>
+          <button  *ngIf=isDitails class="button_card add" mat-stroked-button color="warn">Add to card</button>
         </mat-card-content>
       </mat-card>
-    </div>
-    <div class="wrapper_card">
-      <mat-card>
-        <mat-card-content>
-          <img src="../../../assets/productimages.jpg" alt="products" width="100%">
-          <h4>Realme Pad Mini</h4>
-          <p>Peningkat Kinerja Kuat</p>
-          <p class="prise_card">$ 2.399</p>
-          <button mat-raised-button color="accent">Beli Sekarang</button>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="wrapper_card">
-      <mat-card>
-        <mat-card-content>
-          <img src="../../../assets/productimages.jpg" alt="products" width="100%">
-          <h4>Realme Pad Mini</h4>
-          <p>Peningkat Kinerja Kuat</p>
-          <p class="prise_card">$ 2.399</p>
-          <button mat-raised-button color="accent">Beli Sekarang</button>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="wrapper_card">
-      <mat-card>
-        <mat-card-content>
-          <img src="../../../assets/productimages.jpg" alt="products" width="100%">
-          <h4>Realme Pad Mini</h4>
-          <p>Peningkat Kinerja Kuat</p>
-          <p class="prise_card">$ 2.399</p>
-          <button mat-raised-button color="accent">Beli Sekarang</button>
-        </mat-card-content>
-      </mat-card>
-    </div>
 
 
-
-
-  </div>
 </div>

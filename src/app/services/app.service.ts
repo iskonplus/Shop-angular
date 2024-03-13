@@ -1,6 +1,7 @@
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, delay, tap } from 'rxjs';
+import { Card } from "../types/card";
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,14 @@ import { Observable } from 'rxjs';
 export class AppService {
 
   constructor(private http: HttpClient) { }
+  urlProducts = "https://fakestoreapi.com/products";
 
-  getProducts(url: string): Observable<any> {
-    return this.http.get(url);
+  getProducts(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.urlProducts)
+      .pipe(
+        delay(5000)
+      )
   }
-
 }
+
+

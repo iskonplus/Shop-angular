@@ -4,3 +4,15 @@
   text-align: center;
   padding: 60px 0px;
 }
+
+.wrapper_all_cards{
+  display: flex;
+  flex-wrap: wrap;
+  app-product-cards{
+    display: flex;
+    width: 25%;
+    box-sizing: border-box;
+  }
+}
+
+
