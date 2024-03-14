@@ -1,13 +1,10 @@
 <div class="cont">
   <app-header></app-header>
 
-  <!-- <mat-spinner *ngIf="!isInProgress"></mat-spinner> -->
-
-
-  <main class="main" *ngIf="isInProgress;">
-    <app-new-product [cards]="cards"></app-new-product>
-    <!-- <app-bestseller [cards]="cards"></app-bestseller>
-    <app-product-sale [cards]="cards"></app-product-sale> -->
+  <main class="main" >
+    <app-new-product [cards]="cards" [isInProgress]="isInProgress"></app-new-product>
+    <app-bestseller [cards]="cards"  [isInProgress]="isInProgress"></app-bestseller>
+    <app-product-sale [cards]="cards"  [isInProgress]="isInProgress"></app-product-sale>
   </main>
 
 </div>

@@ -6,6 +6,7 @@ import { AppService } from '../../services/app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgFor, NgIf } from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-all-products',
@@ -18,16 +19,20 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 export class AllProductsComponent implements OnInit {
   title = 'All products';
   cards?: Card[];
-  isInProgress = true;
+  isInProgress!: boolean;
 
   constructor(private appService : AppService){}
 
   ngOnInit(): void {
-
-    this.appService.getProducts().subscribe((products) => {
-      this.cards = products;
-      this.isInProgress = false;
-
-    })
+    this.isInProgress = true;
+    this.appService
+      .getProducts()
+      .pipe(
+        tap((products) => {
+          this.isInProgress = false;
+          this.cards = products;
+        })
+      )
+      .subscribe();
   }
 }

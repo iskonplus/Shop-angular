@@ -2,13 +2,15 @@
 <div class="container">
 
   <app-product-header [title]='title'></app-product-header>
-  <mat-progress-bar mode="buffer" *ngIf="isInProgress"></mat-progress-bar>
-  <div class="wrapper_all_cards">
+  <div class="wrapper_all_cards" *ngIf="!isInProgress; else spinner">
     <app-product-cards
     *ngFor="let card of cards"
-  [card]="card"
-  ></app-product-cards>
-</div>
+    [card]="card"
+    ></app-product-cards>
+  </div>
+  <ng-template #spinner>
+    <mat-progress-bar mode="buffer" ></mat-progress-bar>
+  </ng-template>
 
 </div>
 </main>

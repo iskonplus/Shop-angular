@@ -14,7 +14,7 @@ export class AppService {
   getProducts(): Observable<Card[]> {
     return this.http.get<Card[]>(this.urlProducts)
       .pipe(
-        delay(5000)
+        delay(300)
       )
   }
 }

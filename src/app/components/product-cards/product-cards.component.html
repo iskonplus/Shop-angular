@@ -5,7 +5,7 @@
 
       <mat-card>
         <mat-card-content>
-          <img [src]="card.image" alt="products" width="100%" class="img"  [ngClass]="{active: isDitails}">
+          <img [src]="card.image" alt="products"  class="img"  [ngClass]="{active: isDitails}">
           <h4>{{card.title}}</h4>
           <p class="description" *ngIf=isDitails>{{card.description}}</p>
           <div class="wrapper_price">
