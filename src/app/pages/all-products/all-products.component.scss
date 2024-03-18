@@ -3,6 +3,8 @@
   margin: auto;
   text-align: center;
   padding: 60px 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper_all_cards{
@@ -11,7 +13,6 @@
   app-product-cards{
     display: flex;
     width: 25%;
-    box-sizing: border-box;
   }
 }
 
@@ -21,4 +22,11 @@ main{
 
 mat-spinner{
   margin: auto;
+}
+
+.no_products{
+margin-left: 12px;
+font-size: 20px;
+font-weight: 500;
+color: #b31b1b;
 }

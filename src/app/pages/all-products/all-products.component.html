@@ -1,16 +1,20 @@
 <main>
-<div class="container">
-
-  <app-product-header [title]='title'></app-product-header>
-  <div class="wrapper_all_cards" *ngIf="!isInProgress; else spinner">
-    <app-product-cards
-    *ngFor="let card of cards"
-    [card]="card"
-    ></app-product-cards>
+  <div class="container">
+    <app-product-header [title]="title"></app-product-header>
+    <app-serch-products (addEvent)="reciveWord($event)"></app-serch-products>
+    <div>
+      <div class="wrapper_all_cards" *ngIf="!isInProgress; else spinner">
+        @for (card of cards| filterProducts : searchWord; track $index) {
+        <app-product-cards [card]="card"></app-product-cards>
+        } @if (!(cards | productsLength: searchWord)) {
+        <p class="no_products">
+          There is't any products with name: {{ searchWord }}
+        </p>
+        }
+      </div>
+    </div>
+    <ng-template #spinner>
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </ng-template>
   </div>
-  <ng-template #spinner>
-    <mat-progress-bar mode="buffer" ></mat-progress-bar>
-  </ng-template>
-
-</div>
 </main>

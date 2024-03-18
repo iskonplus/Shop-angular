@@ -56,3 +56,33 @@
 .icon_nav:hover{
   scale: 1.1;
 }
+
+a{
+  position: relative;
+}
+
+
+div.quantity{
+  background-image: none !important;
+  position: absolute;
+  // width: 10px;
+  // height: 10px;
+  padding: 1px;
+  background-color: #B70028;
+  border-radius: 50%;
+  right: -13px;
+  top: -13px;
+  color: #F3F3F3;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff;
+
+  p{
+    margin-bottom: 0px;
+  }
+
+
+}

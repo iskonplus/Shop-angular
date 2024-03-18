@@ -7,19 +7,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgFor, NgIf } from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { tap } from 'rxjs';
+import { SerchProductsComponent } from "../../components/serch-products/serch-products.component";
+import { FilterProductsPipe } from "../../pipes/filter-products.pipe";
+import { ProductsLengthPipe } from "../../pipes/products-length.pipe";
+
 
 @Component({
-  selector: 'app-all-products',
+    selector: 'app-all-products',
     standalone: true,
     templateUrl: './all-products.component.html',
     styleUrl: './all-products.component.scss',
     providers: [AppService],
-    imports: [HttpClientModule, NgFor, NgIf, MatProgressBarModule, ProductHeaderComponent, ProductCardsComponent]
+    imports: [HttpClientModule, NgFor, NgIf, MatProgressBarModule,
+        ProductHeaderComponent, ProductCardsComponent, SerchProductsComponent, FilterProductsPipe, ProductsLengthPipe]
 })
 export class AllProductsComponent implements OnInit {
+
   title = 'All products';
-  cards?: Card[];
+  cards!: Card[];
   isInProgress!: boolean;
+  searchWord = '';
 
   constructor(private appService : AppService){}
 
@@ -35,4 +42,11 @@ export class AllProductsComponent implements OnInit {
       )
       .subscribe();
   }
+
+  reciveWord($event: string) {
+    this.searchWord = $event;
+  }
+
+
+
 }

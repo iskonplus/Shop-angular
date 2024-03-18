@@ -10,11 +10,14 @@
       </ul>
     </div>
     <div class="block_nav">
-      <a class="icon_nav" href="http://">
+      <a class="icon_nav" href="/all-products">
         <div class="iserch"></div>
       </a>
-      <a class="icon_nav" href="http://">
+      <a class="icon_nav" href="/your-cart">
         <div class="icart"></div>
+        @if (productIdInCart!.length) {
+          <div class="quantity"><p>{{productIdInCart!.length}}</p></div>
+        }
       </a>
       <a class="icon_nav" href="http://">
         <div class="iuser"></div>
