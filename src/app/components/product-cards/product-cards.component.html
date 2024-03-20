@@ -9,12 +9,14 @@
         [ngClass]="{ active: isDitails }"
       />
       <h4>{{ card.title }}</h4>
-      <p class="description" *ngIf="isDitails">{{ card.description }}</p>
+      <p class="description" *ngIf="isDitails || iscart">{{ card.description }}</p>
       <div class="wrapper_price">
         <p class="prise_card">Price: {{ card.price | currency : "EUR" }}</p>
         <p>{{ card.rating.rate }}</p>
       </div>
-      <button
+
+      @if(!iscart){
+        <button
         class="button_card"
         mat-raised-button
         color="{{ color }}"
@@ -22,9 +24,11 @@
       >
         {{ isDitails ? "Hide" : "Show" }} Details
       </button>
+      }
+
       <button
         (click)="addToCard(card.id)"
-        *ngIf="isDitails"
+        *ngIf="isDitails || iscart"
         class="button_card add"
         mat-stroked-button
         color="warn"

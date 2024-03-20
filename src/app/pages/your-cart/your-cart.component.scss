@@ -1,0 +1,30 @@
+.container{
+  width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 60px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper_cards{
+  display: flex;
+  flex-wrap: wrap;
+  app-product-cards{
+    display: flex;
+    width: 50%;
+  }
+}
+
+main{
+  background-color: #F3F3F3;
+}
+
+// .wrapper_all_cards{
+//   display: flex;
+//   flex-wrap: wrap;
+//   app-product-cards{
+//     display: flex;
+//     width: 25%;
+//   }
+// }

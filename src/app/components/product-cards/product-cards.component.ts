@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf, CurrencyPipe, NgClass } from '@angular/common';
 import { Card } from '../../types/card';
 import { ProductInCartService } from '../../services/product-in-cart.service';
+// import { YourCartComponent } from '../../pages/your-cart/your-cart.component';
 
 
 @Component({
@@ -15,15 +16,17 @@ import { ProductInCartService } from '../../services/product-in-cart.service';
   styleUrl: './product-cards.component.scss',
 })
 
-export class ProductCardsComponent implements OnInit{
+export class ProductCardsComponent implements OnInit {
   @Input() title?: string;
   @Input() card!: Card;
+  @Input() iscart: boolean = false;
   isDitails: boolean = false;
   isAddToCart: boolean = false;
   color = 'accent';
 
-  constructor(private productInCartService : ProductInCartService) {  }
+  constructor(private productInCartService: ProductInCartService) { }
   ngOnInit(): void {
+
     if (this.productInCartService.productIdInCart.includes(this.card.id)) {
       this.isAddToCart = true;
     }
@@ -36,8 +39,11 @@ export class ProductCardsComponent implements OnInit{
 
 
   addToCard(productId: number) {
-    this.isAddToCart = !this.isAddToCart;
-    this.productInCartService.addProductInCart(productId)
+    if (!this.iscart) {
+      this.isAddToCart = !this.isAddToCart;
+    }
+    this.productInCartService.addProductInCart(productId);
+
   }
 
 }
